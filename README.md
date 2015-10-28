@@ -20,7 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+#### Configuration
+
+Deploy [dummy_thermo.yml](https://github.com/constdrop/dummy_thermo/blob/master/config/dummy_thermo.yml) to your application's config directory, and edit you like.
+
+#### Sample code
+
+    sensor = DummyThermo::Sensor.new([configuration name])
+    sensor.gen  # => ex. 23.4 (temparature value based on your configuration)
+
+    t = Time.new(2015, 10, 25, 12)
+    sensor.gen(t, t - 30, 21.0)  # => ex. 21.3 (temparature value compared recent time and value(2nd, 3rd args))
 
 ## Development
 
